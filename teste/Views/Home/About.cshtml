@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+
+<h2>Preencha este formulario para o envio do seu FeedBack!</h2>
+
+<br />
+
+<div id="conteudo" ">
+    @using (Html.BeginForm("SalvarFormulario", "Home", FormMethod.Post))
+    {
+
+        <label for="nome">Nome</label> <br>
+        <input type="text" name="nome" placeholder="Nome" required=""> <br> <br>
+
+        <label for="email">Email</label> <br>
+        <input type="email" name="email" placeholder="Email" required=""> <br> <br>
+
+        <label for="telefone">Telefone</label> <br>
+        <input type="text" name="telefone" placeholder="Telefone" required=""> <br> <br>
+
+        <label for="mensagem">Mensagem</label> <br>
+        <textarea type=text name="mensagem" required="" class="form form-control" rows="5" cols="10"></textarea><br> <br>
+
+        <input type="submit" value="Cadastrar">
+    }
+
+</div>
+

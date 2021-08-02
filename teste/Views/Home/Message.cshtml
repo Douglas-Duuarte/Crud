@@ -1,0 +1,52 @@
+﻿@model List<Teste>
+
+@{
+    ViewBag.Title = "Mensagem";
+}
+
+<h2>Seus dados e sua mensagem são estes!</h2>
+
+<p>
+    @Html.ActionLink("Create New", "About")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            nome
+        </th>
+        <th>
+            email
+        </th>
+        <th>
+            telefone
+        </th>
+        <th>
+            mensagem
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mensagem)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                <a href="@Url.Action("Delete")?id=@item.Id" onclick="return confirm('Deseja realmente excluir?');">Deletar</a>
+            </td>
+        </tr>
+    }
+
+</table>
